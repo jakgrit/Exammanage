@@ -1,0 +1,76 @@
+<%- include('../layouts/header', {title: 'จัดการผู้ใช้งาน'}); -%>
+<%- include('../layouts/css'); -%>
+
+<style>
+    .row{
+    white-space: nowrap;
+}
+.row > .width-50{
+    width: 50%;
+}
+.center{
+    justify-content: center;
+}
+</style>
+
+<%- include('../layouts/endheader'); -%>
+<div class="uk-flex">
+    <%- include('../layouts/sideMenu'); -%>
+    <div class="content-contianer">
+        <div class="navbar">
+            <div class="uk-flex">
+                <div class="width-100 nav-left">
+                    หน้าหลัก
+                    <span uk-icon="chevron-right"></span> จัดการการเข้าระบบ
+                </div>
+                <%- include('../layouts/navBar'); -%>
+            </div>
+        </div>
+
+        <div class="content">
+            <div style="text-align: center; margin-bottom: 30px;"> <b style="font-size: 35px;"> จัดการการเข้าระบบ </b></div>
+            <form action="/manageuser/uploaduser" method="post" enctype="multipart/form-data">
+
+                <div class="uk-flex row center">
+                    <div style="text-align: right;width: 500px;">
+                        <div style="padding-top: 10px;display: inline;">นำเข้านิสิต</div>
+                        <div class="width-50" style="display:inline-block;width:390px;">
+                            <div class="uk-margin" style="width: 100%;" uk-margin>
+                                <div uk-form-custom="target: true" style="width: 95%;">
+                                    <input type="file" name="student" style="width: 100%;">
+                                    <input class="uk-input uk-form-width-medium" style="width: 100%;" type="text"
+                                        placeholder="Select file" disabled>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="uk-flex row center">
+                    <div style="text-align: right;width: 500px;">
+                        <div style="padding-top: 10px;display: inline;">นำเข้าอาจารย์</div>
+                        <div class="width-50" style="display:inline-block;width:390px;">
+                            <div class="uk-margin" style="width: 100%;" uk-margin>
+                                <div uk-form-custom="target: true" style="width: 95%;">
+                                    <input type="file" name="teacher" style="width: 100%;">
+                                    <input class="uk-input uk-form-width-medium" style="width: 100%;" type="text"
+                                        placeholder="Select file" disabled>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="uk-flex row center">
+                    <div class="width-50" style="text-align: center;">
+                        <button type="submit" class="uk-button uk-button-default">ยืนยัน</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<%- include('../layouts/javascript'); -%>
+<%- include('../layouts/footer'); -%>

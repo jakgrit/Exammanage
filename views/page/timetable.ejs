@@ -1,0 +1,24 @@
+<%- include('../layouts/header', {title: 'ตารางเวลา'}); -%>
+<%- include('../layouts/css'); -%>
+<%- include('../layouts/endheader'); -%>
+    <div class="uk-flex">
+        <%- include('../layouts/sideMenu'); -%>
+        <div class="content-contianer">
+            <div class="navbar">
+                    <div class="uk-flex">
+                        <div class="width-100 nav-left">
+                            หน้าหลัก 
+                            <span uk-icon="chevron-right"></span> ตารางเวลา
+                        </div>
+                        <%- include('../layouts/navBar'); -%>
+                    </div>
+            </div>
+            
+            <div class="content">
+                Content
+            </div>
+        </div>
+    </div>
+
+<%- include('../layouts/javascript'); -%>
+<%- include('../layouts/footer'); -%>

@@ -1,0 +1,66 @@
+<%- include('../layouts/header', {title: 'จัดการห้อง'}); -%>
+<%- include('../layouts/css'); -%>
+<%- include('../layouts/endheader'); -%>
+<div class="uk-flex">
+    <%- include('../layouts/sideMenu'); -%>
+    <div class="content-contianer">
+        <div class="navbar">
+            <div class="uk-flex">
+                <div class="width-100 nav-left">
+                    หน้าหลัก
+                    <span uk-icon="chevron-right"></span> จัดการห้อง
+                </div>
+                <%- include('../layouts/navBar'); -%>
+            </div>
+        </div>
+
+        <div class="content">
+            <div style="margin-bottom: 30px; text-align: center;"> <b style="font-size: 35px;"> จัดการห้อง </b></div>
+            <form action="/room/add" class="uk-form-horizontal uk-margin-large" method="POST">
+                <div style="text-align: center;">
+                    <div class="uk-margin">
+                        <div class="form-add" style="display: flex;justify-content: center;">
+                            <div style="display: inline-block; margin-left: 20px;margin-right: 20px;">ชื่อห้อง</div>
+                            <div class="" style="display: inline-block; width: 15%; margin-right: 20px;">
+                                <input class="uk-input" name="name" type="text" min="0">
+                            </div>
+
+                            <div style="display: inline-block; margin-right: 20px;">ตึก</div>
+                            <div class="" style="display: inline-block; width: 15%">
+                                <select name="building_id" class="uk-select">
+                                    <% buildings.forEach(function(building){ %>
+                                        <option id="building_id" value="<%= building._id%>"><%= building.buiding_name %></option>
+                                    <% });0 %>
+                                </select>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                </div>
+                <div style="display: flex;justify-content: center">
+                    <div style="display: inline-block; margin-left: 20px;">จำนวนแถว</div>
+                    <div class="" style="display: inline-block; width: 15%; margin-left: 20px;">
+                        <input class="uk-input" name="row" type="number" min="0" max="20">
+                    </div>
+                    <div style="display: inline-block; margin-left: 20px;">จำนวนคอลัมน์</div>
+                    <div class="" style="display: inline-block; width: 15%; margin-left: 20px;">
+                        <input class="uk-input" name="col" type="number" min="0" max="20">
+                    </div>
+                </div>
+                <div style=" display: flex;justify-content: center;">
+                    <div class="form-bt" style="text-align: right;">
+                        <button type="submit" style="margin-right: 90px;" class="uk-button uk-button-default">ยืนยัน</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<%- include('../layouts/javascript'); -%>
+<script>
+    $('.form-bt').css('width', $('.form-add').width() + 'px');
+</script>
+<%- include('../layouts/footer'); -%>
